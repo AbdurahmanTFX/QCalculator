@@ -1,0 +1,17 @@
+# Qt/CMake build files
+/build
+/CMakeFiles
+/CMakeCache.txt
+Makefile
+*.o
+*.obj
+*.exe
+*.app
+*.dll
+*.so
+*.dylib
+*.user
+*.pro.user
+*.qrc
+*.rcc
+
