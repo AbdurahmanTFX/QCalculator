@@ -12,6 +12,5 @@ Makefile
 *.dylib
 *.user
 *.pro.user
-*.qrc
 *.rcc
 
