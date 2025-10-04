@@ -6,6 +6,11 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+# Enable Qt features
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
+
 set(QT6_DISABLE_VULKAN ON CACHE BOOL "" FORCE)
 
 # Find Qt6 components
@@ -14,13 +19,13 @@ find_package(Qt6 REQUIRED COMPONENTS Core Gui Quick Qml QuickControls2)
 # Add your executable
 # file(GLOB SOURCES "src/*.cpp")
 add_executable(${PROJECT_NAME} 
-    main.cpp 
+    src/cpp/main.cpp
+    src/cpp/My_Button.cpp
+    src/headers/My_Button.h
 )
 
-# Enable Qt features
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTORCC ON)
-set(CMAKE_AUTOUIC ON)
+target_include_directories(${PROJECT_NAME} PRIVATE src/headers)
+
 
 qt6_add_resources(QT_RESOURCES qml.qrc)
 target_sources(${PROJECT_NAME} PRIVATE ${QT_RESOURCES})
